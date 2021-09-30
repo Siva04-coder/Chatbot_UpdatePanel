@@ -1,0 +1,315 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<style>
+    .highlight {
+        background-color: #5ade6a73;
+    }
+</style>
+
+<!--  -->
+<div class="container content-container">
+    <section class="section">
+
+        <div class="row">
+            <div class="col-4">
+                <label class="form-label">Intent</label>
+                <select style="width: 100%;" name="intent" id="select_subfunctionalarea_consumer">
+                    <option value=""></option>
+                </select>
+            </div>
+            <div class="col-1">
+                <label class="form-label">&nbsp;</label>
+                <button id="gobutton" class="btn btn-primary w-100" value="click" onclick="Search()">GO</button>
+            </div>
+            <div class="col">
+
+            </div>
+
+            <div class="col-4">
+                <label id="name" class="form-label">Add Keyword</label>
+                <input style="width: 100%;" placeholder="Enter Keyword" class="form-control" name="enterkeyword"
+                    id="additional_keyword">
+            </div>
+            <div class="col-1">
+                <label class="form-label">&nbsp;</label>
+                <button id="demo" onclick="AddConSubFunctionalKeyword()" class="btn btn-primary w-100">ADD</button>
+            </div>
+            <script>
+                $('#name').hide();
+                $('#additional_keyword').hide();
+                $('#demo').hide();
+            </script>
+            <script>
+                function AddConSubFunctionalKeyword() {
+                    var r = confirm("Are you sure want to add this keyword ?");
+                    if (r == true) {
+                        $("#processing").show();
+                        var data = new FormData();
+                        data.append('Intent_consumer', $("#select_subfunctionalarea_consumer").val());
+                        data.append('Add_Keyword', $("#additional_keyword").val());
+                        $.ajax({
+                            type: 'POST',
+                            enctype: 'multipart/form-data',
+                            url: '/Add_Keyword_ConSubFunctionalArea',
+                            processData: false,
+                            cache: false,
+                            timeout: 800000,
+                            contentType: false,
+                            data: data,
+                            success: function (response) {
+                                Search()
+                                $('#additional_keyword').val('');
+                            }
+                        });
+                        $("#processing").hide();
+
+                    }
+
+                    else {
+                        return $('#demo')
+                    }
+                }
+
+            </script>
+
+
+        </div>
+
+    </section>
+
+
+    <!--  -->
+
+
+    <section class="section" id="patient_timeline" style="display: none;">
+
+        <!--  -->
+        <button id="demo" onclick="myFunction()" class="btn btn-primary mb-3" data-toggle="modal"
+            data-target=".bd-example-modal-xl">Delete
+        </button>
+
+        <!--  -->
+    </section>
+
+
+
+    <script>
+        function myFunction(deletekey) {
+            console.log(deletekey)
+            var txt;
+            var r = confirm("Are you sure want to delete this keyword ?");
+            if (r == true) {
+                $("#processing").show();
+                var data = new FormData();
+                data.append('Intent_consumer', $("#select_subfunctionalarea_consumer").val());
+                data.append('del_word', deletekey);
+                $.ajax({
+                    type: 'POST',
+                    enctype: 'multipart/form-data',
+                    url: '/del_keywords_ConSubFunctionalArea',
+                    processData: false,
+                    cache: false,
+                    timeout: 800000,
+                    contentType: false,
+                    data: data,
+                    success: function (response) {
+                        Search()
+                        if (!response) {
+                            alert("Something went wrong. Please contact technical team.");
+                        }
+                    }
+                });
+            }
+            else {
+                return $('#demo')
+            }
+
+        }
+    </script>
+    <section class="section">
+
+        <div class="table-responsive" id="patient_details_grid">
+            <table class="table table-striped table-hover table-bordered" id="patientTable">
+                <thead>
+                    <tr>
+                        <th width="50px" class="text-center">#</th>
+                        <th>Keywords</th>
+                        <th width="1%">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="patient_table">
+                    <td colspan="6" style="text-align: center;">No Records Found.</td>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <!--  -->
+</div>
+</div>
+
+
+
+<script class="select2">
+
+    function addAllColumnHeaders(myList) {
+        var columnSet = [];
+        var headerTr$ = $('<tr/>');
+        for (var i = 0; i < myList.length; i++) {
+            var rowHash = myList[i];
+            for (var key in rowHash) {
+                if ($.inArray(key, columnSet) == -1) {
+
+                    columnSet.push(key);
+                    headerTr$.append($('<th/>').html(key));
+
+                }
+            }
+        }
+        $("#av").append(headerTr$);
+
+        return columnSet;
+    }
+
+    $(document).ready(function () {
+        $('select').select2({
+            placeholder: ""
+        });
+        
+        $.ajax({
+            type: 'POST',
+            enctype: 'multipart/form-data',
+            url: '/get_dropdown_intent_consumer',
+            processData: false,
+            cache: false,
+            timeout: 800000,
+            contentType: 'application/json',
+            data: {},
+            success: function (data) {
+                data = $.parseJSON(data);
+                $("#select_subfunctionalarea_consumer").find('option').remove();
+                $("#select_subfunctionalarea_consumer").append('<option value="--Select Intent--">--Select Intent--</option>');
+                $.each(data, function (index, value) {
+                    $("#select_subfunctionalarea_consumer").append('<option value="' + value + '">' + value + '</option>');
+                });
+            }
+        });
+    });
+</script>
+<script>
+
+    $.ajaxSetup({
+        headers: { "X-CSRFToken": '{{csrf_token}}' }
+    });
+
+    $('#form').unbind().submit(function (e) {
+        e.preventDefault();
+
+        var data = {};
+        var Form = this;
+
+        $.each(this.elements, function (i, v) {
+            var input = $(v);
+            data[input.attr("name")] = input.val();
+        });
+
+        $.ajax({
+            type: 'POST',
+            url: '/table',
+            contentType: 'application/json',
+            data: JSON.stringify(data),
+            success: function (data) {
+                $("#results").html(data);
+                $(".select2").remove();
+
+            },
+            error: function () {
+                $(this).html("error!");
+            }
+        });
+    });
+
+
+    function scrollMe() {
+        if ($(".dis").is(":visible")) {
+            $(".dis").hide(400);
+            $(".clo").show(400);
+        }
+        else {
+            $(".clo").hide(400);
+            $(".dis").show(400);
+        }
+    }
+
+    function Search() {
+        $('#additional_keyword').show();
+        $('#demo').show();
+        $('#name').show();
+
+        var data = new FormData();
+
+        data.append('Intent_consumer', $("#select_subfunctionalarea_consumer").val());
+        if (($("#select_subfunctionalarea_consumer").val() == "--Select Intent--")) {
+            $("#patient_table").empty();
+            var row = $("<tr/>");
+            row.append($('<td colspan="7" style="text-align:center" />').html('No Records Found.'));
+            $("#patient_table").append(row);
+
+            $("#processing").show();
+        }
+        else {
+            $("#processing").show();
+            $.ajax({
+                type: 'POST',
+                enctype: 'multipart/form-data',
+                url: './show_dropdownIntent_Keywords_ConSubFunctionalArea',
+                processData: false,
+                contentType: false,
+                cache: false,
+                timeout: 800000,
+                data: data,
+                success: function (response) {
+                    try {
+                        $("#patient_table").empty();
+                        var obj = $.parseJSON(response);
+                        if (Object.keys(obj).length > 0) {
+
+                            for (var i = 0; i < Object.keys(obj).length; i++) {
+                                var deletekey = obj[i]
+                                deletekey = deletekey.replace(/'/gi, "|");
+                                //var data = new FormData();
+                                //data.append('del_word',deletekey);
+                                var row = $("<tr/>", id = 'row');
+                                row.append($('<td/>').html(i + 1));
+                                row.append($('<td/>').html(obj[i]));
+                                $("#patient_table").append(row);
+                                try {
+
+                                    var btn = $('<button onclick="myFunction(\'' + deletekey + '\')"/>').addClass("btn btn-primary btn-sm").text("Delete");
+                                    row.append($('<td/>').append(btn));
+                                    $("#patient_table").append(row);
+
+                                }
+                                catch { }
+                            }
+
+                        }
+
+                        else {
+                            var row = $("<tr/>");
+                            row.append($('<td colspan="6" style="text-align:center" />').html('No Records Found.'));
+                            $("#patient_table").append(row);
+                        }
+                        $("#processing").hide();
+                    }
+                    catch { $("#processing").hide(); }
+                },
+                error: function (err) {
+                    debugger;
+                    $(this).html("error!");
+                }
+            });
+        }
+    }
+</script>
+{% endblock %}

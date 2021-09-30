@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<style>
+    .correction {
+        padding-right:0px;
+        padding-left: 0px;
+    }
+</style>
+<div class="container content-container">
+    <div class="menu-card-container">
+        <div class="row">
+            
+            <div class="col correction">
+                <a class="menu-card" href="/deleteKeywords_HCP">
+                    <i class="fas fa-code-branch"></i>
+                    <div class="menu-card-title">Sub Functional Area Management (HCP)</div>
+                </a>
+            </div>
+            <div class="col correction">
+                <a class="menu-card" href="/addKeywords_HCP">
+                    <i class="fas fa-code-branch"></i>
+                    <div class="menu-card-title">Auto Suggestion Management (HCP)</div>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+{% endblock %}

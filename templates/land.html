@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<style>
+    .correction {
+        padding-right:0px;
+        padding-left: 0px;
+        
+    }
+</style>
+<div class="container content-container">
+    <div class="menu-card-container">      
+        <div class="row">           
+            <div class="col correction">
+                <a class="menu-card" href="/ConSubFunctionalArea">
+                    <i class="fas fa-code-branch"></i>
+                    <div class="menu-card-title">Consumer Sub Functional Area</div>
+                </a>
+            </div>
+            <div class="col correction">
+                <a class="menu-card" href="/ConAutoSuggestion">
+                    <i class="fas fa-code-branch"></i>
+                    <div class="menu-card-title">Consumer Auto Suggestion</div>
+                </a>
+            </div>
+            
+            <div class="col correction">
+                <a class="menu-card" href="/HCPSubFunctionalArea">
+                    <i class="fas fa-code-branch"></i>
+                    <div class="menu-card-title">HCP Sub Functional Area</div>
+                </a>
+            </div>
+            <div class="col correction">
+                <a class="menu-card" href="/HCPAutoSuggestion">
+                    <i class="fas fa-code-branch"></i>
+                    <div class="menu-card-title">HCP Auto Suggestion</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

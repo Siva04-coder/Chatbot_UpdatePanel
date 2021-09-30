@@ -1,0 +1,206 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<style>
+    .highlight {
+        background-color: #5ade6a73;
+    }
+</style>
+
+<!--  -->
+<div class="container content-container">
+    <section class="section">
+        <script src=
+        "https://code.jquery.com/jquery-3.5.1.js"></script>
+        <div  class="row">
+                <div class="col-4">
+                    <label class="form-label">Keyword</label>
+                    <input style="width: 100%;" placeholder="Enter Keyword" class="form-control" name="enterkeyword" id="enter_keyword">
+                </div>
+                <div class="col-1">
+                    <label class="form-label">&nbsp;</label>
+                    <button id="demo" onclick="myFunction()"  class="btn btn-primary w-100" >ADD</button>
+                </div>
+                <div id="results">
+                    <section class="section" id="patient_timeline" style="display: none;">
+            
+                        <!--  -->
+                        <button id="demo1"  onclick="deletefunction()" class="btn btn-primary mb-3" data-toggle="modal" data-target=".bd-example-modal-xl">Delete
+                        </button>
+                        
+                        <!--  -->
+                    </section>
+                </div>
+                <script>
+                   
+                    function myFunction() {
+                    var r = confirm("Are you sure want to add this keyword ?");
+                    if (r == true) { 
+                        debugger;                                        
+                        var data = new FormData();
+                        data.append('Keyword', $("#enter_keyword").val());                                        
+                            $.ajax({
+                                type: 'POST',
+                                enctype: 'multipart/form-data',
+                                url: '/get_new_Keywords',
+                                processData: false,
+                                cache: false,
+                                timeout: 800000,
+                                contentType:false,
+                                data:data,
+                                success: function(response){
+                                    alert('Added')
+                                    }
+                                });                          
+                            }                        
+                    else {
+                        return $('#demo')
+                    }
+                    }
+                </script>
+                
+            <script>
+                function deletefunction(del_key) {
+                    console.log(del_key)
+                    var r = confirm("Are you sure want to delete this keyword ?");
+                    if (r == true) { 
+                        debugger;                                        
+                        var data = new FormData();
+                        data.append('KeywordDelete',del_key);                                        
+                            $.ajax({
+                                type: 'POST',
+                                enctype: 'multipart/form-data',
+                                url: '/get_delete_Keywords',
+                                processData: false,
+                                cache: false,
+                                timeout: 800000,
+                                contentType:false,
+                                data:data,
+                                success: function(response){
+                                    alert('Deleted')
+                                    }
+                                });                          
+                            }                        
+                    else {
+                        return $('#demo1')
+                    }
+                    }
+            </script>
+            <div class ="col">
+
+            </div>
+        </div>
+        </section>
+        
+        <section class="section">
+
+            <div class="table-responsive" id="patient_details_grid">
+                <table class="table table-striped table-hover table-bordered" id="patientTable">
+                    <thead>
+                        <tr>
+                            <th class="text-center" width="50px">#</th>
+                            <th>Keywords</th>     
+                            <th width="1%">Action</th>                      
+                        </tr>
+                    </thead>
+                    <tbody id="patient_table">
+                        <tr>
+                            
+                            <td colspan="7" style="text-align: center;">No Records Found.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <!--  -->
+    </div>
+</div>
+
+<script>
+    var list = document.getElementsByClassName("text-center");
+    for (var i = 1; i <= list.length; i++) {
+        list[i].innerHTML = i;
+}
+</script>
+
+<script>
+        $.ajaxSetup({
+        headers: { "X-CSRFToken": '{{csrf_token}}' }
+    });
+
+    $('#form').unbind().submit(function (e) {
+        e.preventDefault();
+
+        var data = {};
+        var Form = this;
+
+        $.each(this.elements, function (i, v) {
+            var input = $(v);
+            data[input.attr("name")] = input.val();
+        });
+
+        $.ajax({
+            type: 'POST',
+            url: '/table',
+            contentType: 'application/json',
+            
+            data: JSON.stringify(data),
+            success: function (data) {
+                $("#results").html(data);
+                $(".select2").remove();
+
+            },
+            error: function () {
+                $(this).html("error!");
+            }
+        });
+    });
+    
+    function scrollMe() {
+        if ($(".dis").is(":visible")) {
+            $(".dis").hide(400);
+            $(".clo").show(400);
+        }
+        else {
+            $(".clo").hide(400);
+            $(".dis").show(400);
+        }
+    }
+    $(document).ready(function () {
+            $.ajax({
+                type: 'POST',
+                enctype: 'multipart/form-data',
+                url: '/add_keywords',
+                processData: false,
+                contentType: false,
+                cache: false,
+                timeout: 800000,
+                contentType: 'application/json',
+                data: {},
+                success: function (response) {
+                            $('#patient_table').empty()
+                            var data = $.parseJSON(response);
+                            if (Object.keys(data).length > 0) {
+                                for (var i = 0; i < Object.keys(data).length; i++) {
+                                    var row = $("<tr/>");
+                                    var dele_key =data[i]
+                                    dele_key=dele_key.replace(/'/gi, "|");
+                                    row.append($('<td/>').html(i+1));
+                                    row.append($('<td/>').html(data[i]));
+                                    $('#patient_table').append(row)
+                                    try{
+                           
+                                        var btn = $('<button onclick="deletefunction(\'' + del_key + '\')"/>').addClass("btn btn-primary btn-sm").text("Delete");
+                                        row.append($('<td/>').append(btn));
+                                        $("#patient_table").append(row);
+                                    }
+                                    catch{ }     
+                                    }
+                                }
+                        }
+            });
+    });
+</script>
+
+
+{% endblock %}
