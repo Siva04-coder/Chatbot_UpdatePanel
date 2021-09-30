@@ -186,5 +186,3 @@ def delete_Keywords_HCPAutoSuggestion():
     #print(json.dumps(int1))
     return json.dumps(word)
 
-app.run(port=4858)
-
