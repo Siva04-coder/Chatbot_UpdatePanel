@@ -16,6 +16,7 @@ def get_dropdown_intent_consumer():
             #print(x['responses'])
             b.append(x['responses'])
         return b
+
 def show_dropdownIntent_Keywords_ConSubFunctionalArea():     
     if request.method=='POST':
         response=request.form['Intent_consumer']
@@ -26,7 +27,8 @@ def show_dropdownIntent_Keywords_ConSubFunctionalArea():
                 b=x['responses']
                 for words in b:
                     if response==words:
-                        return a 
+                        return a
+
 def del_keywords_ConSubFunctionalArea():
     if request.method=='POST':
         response=request.form['del_word']
@@ -152,7 +154,7 @@ def Show_Keywords_HCPAutoSuggestion():
 def get_new_Keywords_HCPAutoSuggestion():
     if request.method=='POST':
         response=request.form['Keyword']
-    with open(r'data\All_HCP_Keywords.json') as f:
+    with open(r'data/All_HCP_Keywords.json') as f:
         data=json.load(f)
         x=data['keywords']
         x.append(response)
@@ -163,7 +165,7 @@ def get_new_Keywords_HCPAutoSuggestion():
                 file = repo.get_contents("All_HCP_Keywords.json")
                 print(repo.name)
                 repo.update_file("All_HCP_Keywords.json", "FileUpdated", str(data), file.sha)
-                f = open(r"data\All_HCP_Keywords.json", "w")
+                f = open(r"data/All_HCP_Keywords.json", "w")
                 json.dump(data, f,indent=4)
 
 def del_keywords_HCPSubFunctionalArea():
@@ -173,7 +175,7 @@ def del_keywords_HCPSubFunctionalArea():
         org=response.replace("|","'")
         print(org)
         print(response1)
-    with open(r'data\HCP_intent.json') as f:
+    with open(r'data/HCP_intent.json') as f:
         data=json.load(f)
         for  x in data['data']:
             z=x['responses']
@@ -188,7 +190,7 @@ def del_keywords_HCPSubFunctionalArea():
                             file = repo.get_contents("HCP_intent.json")
                             print(repo.name)
                             repo.update_file("HCP_intent.json", "FileUpdated", str(data), file.sha)
-                            f = open(r"data\HCP_intent.json", "w")
+                            f = open(r"data/HCP_intent.json", "w")
                             json.dump(data, f,indent=4)
 
 def Add_Keyword_HCPSubFunctionalArea():
@@ -196,7 +198,7 @@ def Add_Keyword_HCPSubFunctionalArea():
         response=request.form['Add_Keyword']
         response1=request.form['Intent_hcp']
         print(response)
-        with open(r'data\HCP_intent.json') as f:
+        with open(r'data/HCP_intent.json') as f:
             data=json.load(f)
             for  x in data['data']:
                 z=x['responses']
@@ -211,14 +213,14 @@ def Add_Keyword_HCPSubFunctionalArea():
                                 file = repo.get_contents("HCP_intent.json")
                                 print(repo.name)
                                 repo.update_file("HCP_intent.json", "FileUpdated", str(data), file.sha)
-                        f = open(r"data\HCP_intent.json", "w")
+                        f = open(r"data/HCP_intent.json", "w")
                         json.dump(data, f,indent=4)
 
 def delete_Keywords_HCPAutoSuggestion():
     if request.method=='POST':
         response=request.form['KeywordDel']
         org1=response.replace("|","'")
-    with open(r'data\All_HCP_Keywords.json') as f:
+    with open(r'data/All_HCP_Keywords.json') as f:
         data=json.load(f)
         x=data['keywords']
         x.remove(org1)
@@ -229,7 +231,7 @@ def delete_Keywords_HCPAutoSuggestion():
                 file = repo.get_contents("All_HCP_Keywords.json")
                 print(repo.name)
                 repo.update_file("All_HCP_Keywords.json", "FileUpdated", str(data), file.sha)
-        f = open(r"data\All_HCP_Keywords.json", "w")
+        f = open(r"data/All_HCP_Keywords.json", "w")
         json.dump(data, f,indent=4)
 
 
