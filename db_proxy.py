@@ -10,7 +10,7 @@ g = Github("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")
 
 def get_dropdown_intent_consumer():   
     b=[]
-    with open(r'data\intent.json','r') as f:
+    with open(r'data/intent.json','r') as f:
         data = json.load(f)
         for x in data['data']:          
             #print(x['responses'])
@@ -19,7 +19,7 @@ def get_dropdown_intent_consumer():
 def show_dropdownIntent_Keywords_ConSubFunctionalArea():     
     if request.method=='POST':
         response=request.form['Intent_consumer']
-    with open(r'data\intent.json','r') as f:                        
+    with open(r'data/intent.json','r') as f:                        
             data = json.load(f)
             for x in data['data']:
                 a=x['patterns']
@@ -34,7 +34,7 @@ def del_keywords_ConSubFunctionalArea():
         org=response.replace("|","'")
         print(org)
         print(response1)
-    with open(r'data\intent.json') as f:
+    with open(r'data/intent.json') as f:
         data=json.load(f)
         for  x in data['data']:
             z=x['responses']
@@ -51,21 +51,21 @@ def del_keywords_ConSubFunctionalArea():
                             print(repo.name)
                             repo.update_file("intent.json", "FileUpdated", str(data), file.sha)
                     
-                            f = open(r"data\intent.json", "w")
+                            f = open(r"data/intent.json", "w")
                             json.dump(data, f,indent=4)
                     # except Exception as e:
                     #     print(str(e))
                     #     pass
 
 def Show_Keywords_ConAutoSuggestion():   
-    with open(r'data\All_Consumer_Keywords.json') as f:
+    with open(r'data/All_Consumer_Keywords.json') as f:
         data2=json.load(f)
         return data2['keywords']
 
 def get_new_Keywords_ConAutoSuggestion():
     if request.method=='POST':
         response=request.form['Keyword']
-    with open(r'data\All_Consumer_Keywords.json') as f:
+    with open(r'data/All_Consumer_Keywords.json') as f:
         data=json.load(f)
         x=data['keywords']
         x.append(response)
@@ -76,14 +76,14 @@ def get_new_Keywords_ConAutoSuggestion():
                 file = repo.get_contents("All_Consumer_Keywords.json")
                 print(repo.name)
                 repo.update_file("All_Consumer_Keywords.json", "FileUpdated", str(data), file.sha)
-                f = open(r"data\All_Consumer_Keywords.json", "w")
+                f = open(r"data/All_Consumer_Keywords.json", "w")
                 json.dump(data, f,indent=4)
 
 def delete_Keywords_ConAutoSuggestion():
     if request.method=='POST':
         response=request.form['KeywordDelete']
         res=response.replace("|","'")
-    with open(r'data\All_Consumer_Keywords.json') as f:
+    with open(r'data/All_Consumer_Keywords.json') as f:
         data=json.load(f)
         x=data['keywords']
         x.remove(res)
@@ -94,7 +94,7 @@ def delete_Keywords_ConAutoSuggestion():
                 file = repo.get_contents("All_Consumer_Keywords.json")
                 print(repo.name)
                 repo.update_file("All_Consumer_Keywords.json", "FileUpdated", str(data), file.sha)
-        f = open(r"data\All_Consumer_Keywords.json", "w")
+        f = open(r"data/All_Consumer_Keywords.json", "w")
         json.dump(data, f,indent=4)
 
 def Add_Keyword_ConSubFunctionalArea():
@@ -102,7 +102,7 @@ def Add_Keyword_ConSubFunctionalArea():
         response=request.form['Add_Keyword']
         response1=request.form['Intent_consumer']
         print(response)
-        with open(r'data\intent.json') as f:
+        with open(r'data/intent.json') as f:
             data=json.load(f)
             for  x in data['data']:
                 z=x['responses']
@@ -119,14 +119,14 @@ def Add_Keyword_ConSubFunctionalArea():
                                 print(repo.name)
                                 repo.update_file("intent.json", "FileUpdated", str(data), file.sha)    
 
-                                f = open(r"data\intent.json", "w")
+                                f = open(r"data/intent.json", "w")
                                 json.dump(data, f,indent=4)
         
    
 #######################################    HCP   ###################################################
 def get_dropdown_intent_HCP():  
     w=[] 
-    with open(r'data\HCP_intent.json','r') as f:
+    with open(r'data/HCP_intent.json','r') as f:
         data = json.load(f)
         for x in data['data']:          
             #print(x['responses'])
@@ -135,7 +135,7 @@ def get_dropdown_intent_HCP():
 def show_dropdownIntent_Keywords_HCPSubFunctionalArea():     
     if request.method=='POST':
         response=request.form['Intent_hcp']
-    with open(r'data\HCP_intent.json','r') as f:                        
+    with open(r'data/HCP_intent.json','r') as f:                        
             data = json.load(f)
             for x in data['data']:
                 a=x['patterns']
@@ -145,7 +145,7 @@ def show_dropdownIntent_Keywords_HCPSubFunctionalArea():
                         return a 
 
 def Show_Keywords_HCPAutoSuggestion():   
-    with open(r'data\All_HCP_Keywords.json') as f:
+    with open(r'data/All_HCP_Keywords.json') as f:
         data2=json.load(f)
         return data2['keywords']
 
