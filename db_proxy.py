@@ -6,7 +6,7 @@ from github import Github
 import mail
 
 g = Github("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")
-to_address = ['siva.s@masoritherapeutics.com','sankar.s@masoritherapeutics.com']
+to_address = ['siva.s@masoritherapeutics.com']
 
 #######################################    Consumer   ###################################################
 
@@ -36,8 +36,6 @@ def del_keywords_ConSubFunctionalArea():
         response=request.form['del_word']
         response1=request.form['Intent_consumer']
         org=response.replace("|","'")
-        print(org)
-        print(response1)
     with open(r'data/intent.json') as f:
         data=json.load(f)
         for  x in data['data']:
@@ -75,13 +73,13 @@ def get_new_Keywords_ConAutoSuggestion():
         data=json.load(f)
         x=data['keywords']
         x.append(response)
-        # for repo in g.get_user().get_repos():
-        #     if repo.name == 'Workout':                            
-        #         repo.edit(has_wiki=False)
-        #         #repo.create_file("Test.txt", "Initial Changes", "Wonderful")
-        #         file = repo.get_contents("All_Consumer_Keywords.json")
-        #         print(repo.name)
-        #         repo.update_file("All_Consumer_Keywords.json", "FileUpdated", str(data), file.sha)
+        for repo in g.get_user().get_repos():
+            if repo.name == 'Workout':                            
+                repo.edit(has_wiki=False)
+                #repo.create_file("Test.txt", "Initial Changes", "Wonderful")
+                file = repo.get_contents("All_Consumer_Keywords.json")
+                print(repo.name)
+                repo.update_file("All_Consumer_Keywords.json", "FileUpdated", str(data), file.sha)
     with open(r"data/All_Consumer_Keywords.json", "w") as fw:
         json.dump(data, fw)
 
@@ -95,13 +93,13 @@ def delete_Keywords_ConAutoSuggestion():
         data=json.load(f)
         x=data['keywords']
         x.remove(res)
-        # for repo in g.get_user().get_repos():
-        #     if repo.name == 'Workout':                            
-        #         repo.edit(has_wiki=False)
-        #         #repo.create_file("Test.txt", "Initial Changes", "Wonderful")
-        #         file = repo.get_contents("All_Consumer_Keywords.json")
-        #         print(repo.name)
-        #         repo.update_file("All_Consumer_Keywords.json", "FileUpdated", str(data), file.sha)
+        for repo in g.get_user().get_repos():
+            if repo.name == 'Workout':                            
+                repo.edit(has_wiki=False)
+                #repo.create_file("Test.txt", "Initial Changes", "Wonderful")
+                file = repo.get_contents("All_Consumer_Keywords.json")
+                print(repo.name)
+                repo.update_file("All_Consumer_Keywords.json", "FileUpdated", str(data), file.sha)
     with open(r"data/All_Consumer_Keywords.json", "w") as fw:
         json.dump(data, fw)
 
