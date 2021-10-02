@@ -5,7 +5,7 @@ from flask import Flask, request, session
 from github import Github
 import mail
 
-g = Github("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")
+g = Github("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")
 to_address = ['siva.s@masoritherapeutics.com']
 
 #######################################    Consumer   ###################################################
