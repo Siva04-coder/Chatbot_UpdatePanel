@@ -1,6 +1,5 @@
 {
-    "data": [
-        {
+    "data": [{
             "Intent": "About PD Psychosis",
             "patterns": [
                 "About PD disease",
@@ -8,6 +7,7 @@
                 "Parkinson Diseases",
                 "Parkinson's Disease",
                 "Parkinson's Diseases",
+                "PDP",
                 "About Parkinson Disease Psychosis",
                 "About Parkinson's Disease Psychosis",
                 "About Parkinsons Disease Psychosis",
@@ -31,15 +31,7 @@
                 "PD related Hallucinations and Delusions",
                 "Delusions of jealousy",
                 "Delusions jealousy",
-                "PDP"
-            ],
-            "responses": [
-                "About Parkinson's Disease Psychosis"
-            ]
-        },
-        {
-            "Intent": "About Hallucinations and Delusions",
-            "patterns": [
+                "Hallucination",
                 "Hallucinations",
                 "Delusion",
                 "Delusions",
@@ -50,17 +42,16 @@
                 "symptom Parkinson's",
                 "Symptoms of Parkinson's Disease Psychosis",
                 "symptom Parkinson's",
-                "symptom Parkinsons",
+                "symptom Parkinsons",              
                 "PD symptom",
                 "PD symptoms",
                 "symptoms PDP",
                 "symptom PDP",
                 "PDP symptoms",
-                "PDP symptom",
-                "Hallucination"
+                "PDP symptom"
             ],
             "responses": [
-                "About Hallucinations & Delusions"
+                "About PD Psychosis"
             ]
         },
         {
@@ -99,7 +90,7 @@
                 "NUPLAZID"
             ],
             "responses": [
-                "Learn about NUPLAZID"
+                "Home Landing Page"
             ]
         },
         {
@@ -134,7 +125,7 @@
                 "Fact sheet download"
             ],
             "responses": [
-                "Fact sheets & Discussion guide"
+                "Resources"
             ]
         },
         {
@@ -154,22 +145,7 @@
                 "Impact on motor functions",
                 "Impact motor functions",
                 "Impact on nonmotor functions",
-                "Impact nonmotor functions"
-            ],
-            "responses": [
-                "NUPLAZID FDA-approved therapy"
-            ]
-        },
-        {
-            "Intent": "NUPLAZID Warnings",
-            "patterns": [],
-            "responses": [
-                "NUPLAZID Warnings"
-            ]
-        },
-        {
-            "Intent": "Efficacy Story",
-            "patterns": [
+                "Impact nonmotor functions",
                 "NUPLAZID efficacy",
                 "Efficacy Data",
                 "Efficacy Data NUPLAZID",
@@ -183,42 +159,20 @@
                 "efficacy measuring",
                 "measuring",
                 "Clinical studies",
-                "Clinical data"
-            ],
-            "responses": [
-                "NUPLAZID efficacy"
-            ]
-        },
-        {
-            "Intent": "Efficacy",
-            "patterns": [
+                "Clinical data",
                 "NUPLAZID efficacy results",
                 "NUPLAZID efficacy result",
                 "efficacy result",
-                "efficacy results"
-            ],
-            "responses": [
-                "NUPLAZID efficacy results"
-            ]
-        },
-        {
-            "Intent": "Efficacy",
-            "patterns": [
+                "efficacy results",
+                "Clinical trials experience",
+                "Clinical trial experience",
                 "OLE Study",
                 "Open label extension Study",
                 "open label safety study",
                 "open label study",
                 "OLE",
                 "open label safety",
-                "Open label extension"
-            ],
-            "responses": [
-                "OLE Study"
-            ]
-        },
-        {
-            "Intent": "About SAPS-PD",
-            "patterns": [
+                "Open label extension",
                 "SAPS-PD",
                 "pivotal trial",
                 "hallucinations measured",
@@ -226,21 +180,7 @@
                 "SAPS PD"
             ],
             "responses": [
-                "About SAPS-PD"
-            ]
-        },
-        {
-            "Intent": "Medical Information",
-            "patterns": [
-                "common adverse reactions",
-                "common adverse reaction",
-                "Adverse reaction",
-                "Adverse reactions",
-                "Adverse",
-                "Common Adverse"
-            ],
-            "responses": [
-                "Medical Information"
+                "Efficacy Data"
             ]
         },
         {
@@ -253,15 +193,7 @@
                 "precautions",
                 "precaution",
                 "safety studies",
-                "Boxed Warning"
-            ],
-            "responses": [
-                "Pimavanserin safety"
-            ]
-        },
-        {
-            "Intent": "Safety Information",
-            "patterns": [
+                "Boxed Warning",
                 "NUPLAZID important safety information",
                 "NUPLAZID safety",
                 "NUPLAZID safe",
@@ -299,7 +231,7 @@
                 "NUPLAZID warning and precautions"
             ],
             "responses": [
-                "NUPLAZID important safety information"
+                "Safety & Tolerability"
             ]
         },
         {
@@ -320,7 +252,7 @@
                 "Mechanism action"
             ],
             "responses": [
-                "About MOA"
+                "Proposed Mechanism of Action"
             ]
         },
         {
@@ -353,7 +285,7 @@
                 "Sprinkle instructions"
             ],
             "responses": [
-                "Dosage Administration"
+                "Dosing"
             ]
         },
         {
@@ -373,64 +305,76 @@
                 "Guidelines care coordinator",
                 "Acadia connect contact information",
                 "Guidelines",
-                "financial assistance"
-            ],
-            "responses": [
-                "NUPLAZID medication payment assistance"
-            ]
-        },
-        {
-            "Intent": "Cost Information",
-            "patterns": [
+                "financial assistance",
                 "Connect Acadia",
                 "cost and insurance",
                 "forms",
                 "covering prescription costs",
                 "enrolled eligibility",
                 "eligibility",
-                "cost"
-            ],
-            "responses": [
-                "cost and insurance"
-            ]
-        },
-        {
-            "Intent": "Contact",
-            "patterns": [
-                "care coordinator",
-                "assistant",
-                "assistance",
-                "assist me",
-                "contact"
-            ],
-            "responses": [
-                "Contact"
-            ]
-        },
-        {
-            "Intent": "Coverage high level information and links",
-            "patterns": [
+                "cost",
                 "NUPLAZID patient assistance",
                 "Support program",
                 "Treatment form",
                 "Treatment forms",
                 "patient treatment form",
-                "get NUPLAZID"
-            ],
-            "responses": [
-                "NUPLAZID patient assistance"
-            ]
-        },
-        {
-            "Intent": "Coverage high level information and links",
-            "patterns": [
+                "get NUPLAZID",
                 "NUPLAZID registry",
-                "enroll patient"
+                "enroll patient",
+                "Insurance Coverage",
+                "Insurance Lookup",
+                "reimbursement support",
+                "medical necessity template",
+                "Medical necessity",
+                "medicare plan",
+                "Insurance Coverage",
+                "patient eligibility",
+                "Insurance Options",
+                "care coordinator",
+                "assistant",
+                "assistance",
+                "assist me",
+                "contact",
+                "medicine NUPLAZID",
+                "NUPLAZID cost",
+                "much NUPLAZID",
+                "NUPLAZID enrollment form",
+                "NUPLAZID drug classification",
+                "drug classification",
+                "NUPLAZID black box warning",
+                "NUPLAZID pharmacy",
+                "prescription process",
+                "In-office care",
+                "In office care",
+                "reimbursement process",
+                "Long-term",
+                "Long term",
+                "long-term service",
+                "long term service",
+                "long-term care service request form",
+                "long term care service request form",
+                "ICD-10 Codes",
+                "ICD-10 Code",
+                "ICD-10",
+                "Diagnostic codes",
+                "Diagnostic code",
+                "Formulary Lookup",
+                "Prior authorization",
+                "Acadiaconnect details",
+                "Acadia",
+                "Acadiaconnect",
+                "Acadia Connect",
+                "Connect Acadia",
+                "someone enroll acadia connect",
+                "enroll acadia connect",
+                "acadia connect",
+                "Caregiver support"
             ],
             "responses": [
-                "NUPLAZID registry"
+                "Acadia Connect"
             ]
         },
+        
         {
             "Intent": "ordering samples",
             "patterns": [
@@ -450,71 +394,7 @@
                 "sample order"
             ],
             "responses": [
-                "ordering samples"
-            ]
-        },
-        {
-            "Intent": "Coverage high level information and links",
-            "patterns": [
-                "Insurance Coverage",
-                "Insurance Lookup",
-                "reimbursement support",
-                "medical necessity template",
-                "Medical necessity",
-                "medicare plan",
-                "Insurance Coverage",
-                "patient eligibility",
-                "Insurance Options"
-            ],
-            "responses": [
-                "Insurance Coverage"
-            ]
-        },
-        {
-            "Intent": "Getting NUPLAZID",
-            "patterns": [
-                "medicine NUPLAZID",
-                "NUPLAZID cost",
-                "much NUPLAZID",
-                "NUPLAZID enrollment form",
-                "NUPLAZID drug classification",
-                "drug classification",
-                "NUPLAZID black box warning",
-                "NUPLAZID pharmacy",
-                "prescription process",
-                "In-office care",
-                "In office care",
-                "reimbursement process"
-            ],
-            "responses": [
-                "NUPLAZID cost details"
-            ]
-        },
-        {
-            "Intent": "Long-Term Care Service",
-            "patterns": [
-                "Long-term",
-                "Long term",
-                "long-term service",
-                "long term service",
-                "long-term care service request form",
-                "long term care service request form"
-            ],
-            "responses": [
-                "Long-Term Care Service"
-            ]
-        },
-        {
-            "Intent": "Diagnostic Codes Information and Link",
-            "patterns": [
-                "ICD-10 Codes",
-                "ICD-10 Code",
-                "ICD-10",
-                "Diagnostic codes",
-                "Diagnostic code"
-            ],
-            "responses": [
-                "Diagnostic codes"
+                "Samples"
             ]
         },
         {
@@ -533,14 +413,41 @@
                 "share information",
                 "share info",
                 "share additional info",
-                "share additional information"
+                "share additional information",
+                "NUPLAZID Dosing guide",
+                "NUPLAZID Dosing guides",
+                "NUPLAZID Resources",
+                "NUPLAZID Resource",
+                "Resources NUPLAZID",
+                "NUPLAZID Factsheet",
+                "Dosing guide",
+                "Dosing guides",
+                "Fact sheets & Dosing guide",
+                "Fact sheets & Dosing guides",
+                "Fact sheet",
+                "Factsheet",
+                "Factsheets",
+                "Fact sheets",
+                "Distribution Fact sheet",
+                "Distribution Factsheet",
+                "Distribution Fact sheets",
+                "Fact sheet Distribution",
+                "Fact sheet Distributions",
+                "Factsheet Distribution",
+                "Factsheet Distributions",
+                "download Fact sheet",
+                "download Factsheet",
+                "download Fact sheets",
+                "download Factsheets",
+                "Factsheet download",
+                "Fact sheet download"
             ],
             "responses": [
                 "Resources"
             ]
         },
         {
-            "Intent": "Medical Questions",
+            "Intent": "Medical Information",
             "patterns": [
                 "Reporting Adverse reactions",
                 "Reporting Adverse reaction",
@@ -598,39 +505,16 @@
                 "report issue",
                 "report issues",
                 "someone medical concern",
-                "someone about medical concern"
+                "someone about medical concern",
+                "common adverse reactions",
+                "common adverse reaction",
+                "Adverse reaction",
+                "Adverse reactions",
+                "Adverse",
+                "Common Adverse"
             ],
             "responses": [
-                "Medical Questions"
-            ]
-        },
-        {
-            "Intent": "General Information",
-            "patterns": [
-                "Clinical trials experience",
-                "Clinical trial experience"
-            ],
-            "responses": [
-                "Placebo controlled studies"
-            ]
-        },
-        {
-            "Intent": "Acadia Connect Representative Contact Details",
-            "patterns": [
-                "Formulary Lookup",
-                "Prior authorization",
-                "Acadiaconnect details",
-                "Acadia",
-                "Acadiaconnect",
-                "Acadia Connect",
-                "Connect Acadia",
-                "someone enroll acadia connect",
-                "enroll acadia connect",
-                "acadia connect",
-                "Caregiver support"
-            ],
-            "responses": [
-                "Acadiaconnect details"
+                "Medical Information"
             ]
         }
     ]

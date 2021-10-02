@@ -3,8 +3,10 @@ import json
 import os
 from flask import Flask, request, session
 from github import Github
+import mail
 
 g = Github("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")
+to_address = ['siva.s@masoritherapeutics.com','sankar.s@masoritherapeutics.com']
 
 #######################################    Consumer   ###################################################
 
@@ -45,16 +47,18 @@ def del_keywords_ConSubFunctionalArea():
                 if words==response1:
                     y.remove(org)
                     #try:
-                    for repo in g.get_user().get_repos():
-                        if repo.name == 'Workout':                            
-                            repo.edit(has_wiki=False)
-                            #repo.create_file("Test.txt", "Initial Changes", "Wonderful")
-                            file = repo.get_contents("intent.json")
-                            print(repo.name)
-                            repo.update_file("intent.json", "FileUpdated", str(data), file.sha)
+                    # for repo in g.get_user().get_repos():
+                    #     if repo.name == 'Workout':                            
+                    #         repo.edit(has_wiki=False)
+                    #         #repo.create_file("Test.txt", "Initial Changes", "Wonderful")
+                    #         file = repo.get_contents("intent.json")
+                    #         print(repo.name)
+                    #         repo.update_file("intent.json", "FileUpdated", str(data), file.sha)
                     
-                            f = open(r"data/intent.json", "w")
-                            json.dump(data, f,indent=4)
+                    f = open(r"data/intent.json", "w")
+                    json.dump(data, f,indent=4)
+
+                    mail.SendMail(to_address, "Consumer Chatbot Changed", "Consumer Sub Functional Area ("+response1+") keyword ("+org+") has been removed.")
                     # except Exception as e:
                     #     print(str(e))
                     #     pass
@@ -71,15 +75,17 @@ def get_new_Keywords_ConAutoSuggestion():
         data=json.load(f)
         x=data['keywords']
         x.append(response)
-        for repo in g.get_user().get_repos():
-            if repo.name == 'Workout':                            
-                repo.edit(has_wiki=False)
-                #repo.create_file("Test.txt", "Initial Changes", "Wonderful")
-                file = repo.get_contents("All_Consumer_Keywords.json")
-                print(repo.name)
-                repo.update_file("All_Consumer_Keywords.json", "FileUpdated", str(data), file.sha)
-                f = open(r"data/All_Consumer_Keywords.json", "w")
-                json.dump(data, f,indent=4)
+        # for repo in g.get_user().get_repos():
+        #     if repo.name == 'Workout':                            
+        #         repo.edit(has_wiki=False)
+        #         #repo.create_file("Test.txt", "Initial Changes", "Wonderful")
+        #         file = repo.get_contents("All_Consumer_Keywords.json")
+        #         print(repo.name)
+        #         repo.update_file("All_Consumer_Keywords.json", "FileUpdated", str(data), file.sha)
+        f = open(r"data/All_Consumer_Keywords.json", "w")
+        json.dump(data, f,indent=4)
+
+        mail.SendMail(to_address, "Consumer Chatbot Changed", "Consumer Auto Suggestion new keyword ("+response+") has been added.")
 
 def delete_Keywords_ConAutoSuggestion():
     if request.method=='POST':
@@ -89,15 +95,17 @@ def delete_Keywords_ConAutoSuggestion():
         data=json.load(f)
         x=data['keywords']
         x.remove(res)
-        for repo in g.get_user().get_repos():
-            if repo.name == 'Workout':                            
-                repo.edit(has_wiki=False)
-                #repo.create_file("Test.txt", "Initial Changes", "Wonderful")
-                file = repo.get_contents("All_Consumer_Keywords.json")
-                print(repo.name)
-                repo.update_file("All_Consumer_Keywords.json", "FileUpdated", str(data), file.sha)
+        # for repo in g.get_user().get_repos():
+        #     if repo.name == 'Workout':                            
+        #         repo.edit(has_wiki=False)
+        #         #repo.create_file("Test.txt", "Initial Changes", "Wonderful")
+        #         file = repo.get_contents("All_Consumer_Keywords.json")
+        #         print(repo.name)
+        #         repo.update_file("All_Consumer_Keywords.json", "FileUpdated", str(data), file.sha)
         f = open(r"data/All_Consumer_Keywords.json", "w")
         json.dump(data, f,indent=4)
+
+        mail.SendMail(to_address, "Consumer Chatbot Changed", "Consumer Auto Suggestion keyword ("+res+") has been removed.")
 
 def Add_Keyword_ConSubFunctionalArea():
     if request.method=='POST':
@@ -113,17 +121,18 @@ def Add_Keyword_ConSubFunctionalArea():
                     if words==response1:
                         y.append(response)
 
-                        for repo in g.get_user().get_repos():
-                            if repo.name == 'Workout':                            
-                                repo.edit(has_wiki=False)
-                                #repo.create_file("Test.txt", "Initial Changes", "Wonderful")
-                                file = repo.get_contents("intent.json")
-                                print(repo.name)
-                                repo.update_file("intent.json", "FileUpdated", str(data), file.sha)    
+                        # for repo in g.get_user().get_repos():
+                        #     if repo.name == 'Workout':                            
+                        #         repo.edit(has_wiki=False)
+                        #         #repo.create_file("Test.txt", "Initial Changes", "Wonderful")
+                        #         file = repo.get_contents("intent.json")
+                        #         print(repo.name)
+                        #         repo.update_file("intent.json", "FileUpdated", str(data), file.sha)    
 
-                                f = open(r"data/intent.json", "w")
-                                json.dump(data, f,indent=4)
-        
+                        f = open(r"data/intent.json", "w")
+                        json.dump(data, f,indent=4)
+                        
+                        mail.SendMail(to_address, "Consumer Chatbot Changed", "Consumer Sub Functional Area ("+response1+") new keyword ("+response+") has been added.")
    
 #######################################    HCP   ###################################################
 def get_dropdown_intent_HCP():  
@@ -134,7 +143,7 @@ def get_dropdown_intent_HCP():
             #print(x['responses'])
             w.append(x['responses'])
         return w
-def show_dropdownIntent_Keywords_HCPSubFunctionalArea():     
+def show_dropdownIntent_Keywords_HCPSubFunctionalArea():
     if request.method=='POST':
         response=request.form['Intent_hcp']
     with open(r'data/HCP_intent.json','r') as f:                        
@@ -158,15 +167,17 @@ def get_new_Keywords_HCPAutoSuggestion():
         data=json.load(f)
         x=data['keywords']
         x.append(response)
-        for repo in g.get_user().get_repos():
-            if repo.name == 'Workout':                            
-                repo.edit(has_wiki=False)
-                #repo.create_file("Test.txt", "Initial Changes", "Wonderful")
-                file = repo.get_contents("All_HCP_Keywords.json")
-                print(repo.name)
-                repo.update_file("All_HCP_Keywords.json", "FileUpdated", str(data), file.sha)
-                f = open(r"data/All_HCP_Keywords.json", "w")
-                json.dump(data, f,indent=4)
+        # for repo in g.get_user().get_repos():
+        #     if repo.name == 'Workout':                            
+        #         repo.edit(has_wiki=False)
+        #         #repo.create_file("Test.txt", "Initial Changes", "Wonderful")
+        #         file = repo.get_contents("All_HCP_Keywords.json")
+        #         print(repo.name)
+        #         repo.update_file("All_HCP_Keywords.json", "FileUpdated", str(data), file.sha)
+        f = open(r"data/All_HCP_Keywords.json", "w")
+        json.dump(data, f,indent=4)
+
+        mail.SendMail(to_address, "HCP Chatbot Changed", "HCP Auto Suggestion keyword ("+response+") has been added.")
 
 def del_keywords_HCPSubFunctionalArea():
     if request.method=='POST':
@@ -183,15 +194,17 @@ def del_keywords_HCPSubFunctionalArea():
             for words in z:
                 if words==response1:
                     y.remove(org)
-                    for repo in g.get_user().get_repos():
-                        if repo.name == 'Workout':                            
-                            repo.edit(has_wiki=False)
-                            #repo.create_file("Test.txt", "Initial Changes", "Wonderful")
-                            file = repo.get_contents("HCP_intent.json")
-                            print(repo.name)
-                            repo.update_file("HCP_intent.json", "FileUpdated", str(data), file.sha)
-                            f = open(r"data/HCP_intent.json", "w")
-                            json.dump(data, f,indent=4)
+                    # for repo in g.get_user().get_repos():
+                    #     if repo.name == 'Workout':                            
+                    #         repo.edit(has_wiki=False)
+                    #         #repo.create_file("Test.txt", "Initial Changes", "Wonderful")
+                    #         file = repo.get_contents("HCP_intent.json")
+                    #         print(repo.name)
+                    #         repo.update_file("HCP_intent.json", "FileUpdated", str(data), file.sha)
+                    f = open(r"data/HCP_intent.json", "w")
+                    json.dump(data, f,indent=4)
+                    
+                    mail.SendMail(to_address, "HCP Chatbot Changed", "HCP Sub Functional Area ("+response1+") keyword ("+org+") has been removed.")
 
 def Add_Keyword_HCPSubFunctionalArea():
     if request.method=='POST':
@@ -206,15 +219,17 @@ def Add_Keyword_HCPSubFunctionalArea():
                 for words in z:
                     if words==response1:
                         y.append(response)
-                        for repo in g.get_user().get_repos():
-                            if repo.name == 'Workout':                            
-                                repo.edit(has_wiki=False)
-                                #repo.create_file("Test.txt", "Initial Changes", "Wonderful")
-                                file = repo.get_contents("HCP_intent.json")
-                                print(repo.name)
-                                repo.update_file("HCP_intent.json", "FileUpdated", str(data), file.sha)
+                        # for repo in g.get_user().get_repos():
+                        #     if repo.name == 'Workout':                            
+                        #         repo.edit(has_wiki=False)
+                        #         #repo.create_file("Test.txt", "Initial Changes", "Wonderful")
+                        #         file = repo.get_contents("HCP_intent.json")
+                        #         print(repo.name)
+                        #         repo.update_file("HCP_intent.json", "FileUpdated", str(data), file.sha)
                         f = open(r"data/HCP_intent.json", "w")
                         json.dump(data, f,indent=4)
+
+                        mail.SendMail(to_address, "HCP Chatbot Changed", "HCP Sub Functional Area ("+response1+") keyword ("+response+") has been added.")
 
 def delete_Keywords_HCPAutoSuggestion():
     if request.method=='POST':
@@ -224,16 +239,17 @@ def delete_Keywords_HCPAutoSuggestion():
         data=json.load(f)
         x=data['keywords']
         x.remove(org1)
-        for repo in g.get_user().get_repos():
-            if repo.name == 'Workout':                            
-                repo.edit(has_wiki=False)
-                #repo.create_file("Test.txt", "Initial Changes", "Wonderful")
-                file = repo.get_contents("All_HCP_Keywords.json")
-                print(repo.name)
-                repo.update_file("All_HCP_Keywords.json", "FileUpdated", str(data), file.sha)
+        # for repo in g.get_user().get_repos():
+        #     if repo.name == 'Workout':                            
+        #         repo.edit(has_wiki=False)
+        #         #repo.create_file("Test.txt", "Initial Changes", "Wonderful")
+        #         file = repo.get_contents("All_HCP_Keywords.json")
+        #         print(repo.name)
+        #         repo.update_file("All_HCP_Keywords.json", "FileUpdated", str(data), file.sha)
         f = open(r"data/All_HCP_Keywords.json", "w")
         json.dump(data, f,indent=4)
 
+        mail.SendMail(to_address, "HCP Chatbot Changed", "HCP Auto Suggestion keyword ("+org1+") has been removed.")
 
 #######################################    Login   ###################################################
 

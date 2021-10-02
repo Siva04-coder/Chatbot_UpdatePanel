@@ -103,7 +103,7 @@
                         console.log(delete_key)
                         var r = confirm("Are you sure want to delete this keyword ?");
                         if (r == true) {
-                            debugger;
+                            $("#processing").show();
                             var data = new FormData();
                             data.append('KeywordDelete', delete_key);
                             $.ajax({
@@ -149,7 +149,7 @@
                                                     }
 
                                                 }
-
+                                                $("#processing").hide();
                                             }
 
                                         });

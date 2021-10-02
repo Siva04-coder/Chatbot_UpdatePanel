@@ -3,6 +3,28 @@
         {
             "Intent": "Symptoms",
             "patterns": [
+                "About PD disease",
+                "PD",
+                "About Parkinson Disease Psychosis",
+                "About Parkinson's Disease Psychosis",
+                "About Parkinson's Diseases Psychosis",
+                "About Parkinsons Disease Psychosis",
+                "About Parkinsons Diseases Psychosis",
+                "about psychosis",
+                "psychosis",
+                "symptoms & potential causes",
+                "parkinson disease",
+                "parkinson's disease",
+                "parkinson's diseases",
+                "parkinsons diseases",
+                "parkinsons disease",
+                "parkinson diseases",
+                "signs Parkinson's disease",
+                "sign Parkinson's disease",
+                "pd symptoms",
+                "pd symptom",
+                "symptoms of pd",
+                "symptom of pd",
                 "symptoms Parkinson's disease",
                 "symptom Parkinson's disease",
                 "Parkinson's disease symptoms",
@@ -40,36 +62,65 @@
                 "manage Parkinson's disease",
                 "manage pd",
                 "manage pdp",
-                "signs Parkinson's disease",
-                "sign Parkinson's disease",
-                "pd symptoms"
+                "cause of Parkinson disease",
+                "cause of Parkinson's disease",
+                "cause of Parkinson's diseases",
+                "cause of PD",
+                "cause of Parkinsons disease",
+                "cause of Parkinson diseases",
+                "cause of Parkinsons diseases",
+                "Parkinson condition",
+                "Parkinson's condition",
+                "management of Parkinson",
+                "management of Parkinson's",
+                "Learn about Parkinson disease",
+                "Learn about Parkinson's disease",
+                "Parkinson condition",
+                "management of Parkinson",
+                "Learn about Parkinson disease",
+                "Parkinson's condition",
+                "management of Parkinson's",
+                "Learn about Parkinson's disease",
+                "hallucinations Parkinson",
+                "hallucinations associated Parkinson's Disease",
+                "Parkinson induced hallucinations",
+                "Parkinson hallucination",
+                "hallucinations Parkinson's",
+                "Parkinson's induced hallucinations",
+                "Parkinson's hallucination",
+                "signs of hallucinations",
+                "sign of hallucination",
+                "hallucination",
+                "hallucinations",
+                "visual hallucinations",
+                "PD related Hallucinations",
+                "PD-related Hallucinations",
+                "PD-related Hallucination",
+                "PD related Hallucination",
+                "Parkinson delusions",
+                "Parkinson induced delusions",
+                "Parkinson delusion",
+                "Parkinson's delusions",
+                "Parkinson's induced delusions",
+                "Parkinson's delusion",
+                "related hallucination & delusion",
+                "related hallucinations & delusions",
+                "delusion",
+                "delusions",
+                "NUPLAZID PD-related Delusions",
+                "NUPLAZID PD related Delusions",
+                "NUPLAZID PD-related Delusion",
+                "NUPLAZID PD related Delusion",
+                "delusions associated PD psychosis",
+                "delusions psychosis",
+                "delusions associated psychosis",
+                "delusions associated PD",
+                "delusions associated Parkinson",
+                "delusions associated Parkinson's",
+                "delusions associated Parkinsons"
             ],
             "responses": [
-                "symptoms of Parkinson's disease"
-            ]
-        },
-        {
-            "Intent": "Symptoms",
-            "patterns": [
-                "About PD disease",
-                "About Parkinson Disease Psychosis",
-                "About Parkinson's Disease Psychosis",
-                "About Parkinson's Diseases Psychosis",
-                "About Parkinsons Disease Psychosis",
-                "About Parkinsons Diseases Psychosis",
-                "about psychosis",
-                "psychosis",
-                "symptoms & potential causes",
-                "parkinson's disease",
-                "parkinson's diseases",
-                "parkinsons diseases",
-                "parkinsons disease",
-                "parkinson disease",
-                "parkinson disease",
-                "PD"
-            ],
-            "responses": [
-                "About Parkinson's Disease Psychosis"
+                "About PD-related Hallucinations and Delusions"
             ]
         },
         {
@@ -82,6 +133,9 @@
                 "NUPLAZID help",
                 "help NUPLAZID",
                 "Indication nuplazid",
+                "About NUPLAZID",
+                "NUPLAZID",
+                "Explain NUPLAZID",
                 "indication usage",
                 "dosage nuplazid",
                 "dosage administration",
@@ -92,18 +146,18 @@
                 "Indication",
                 "treatment Parkinsons disease",
                 "treatment pdp",
-                "treatment"
-            ],
-            "responses": [
-                "About NUPLAZID Efficacy"
-            ]
-        },
-        {
-            "Intent": "About NUPLAZID",
-            "patterns": [
-                "About NUPLAZID",
-                "NUPLAZID",
-                "Explain NUPLAZID"
+                "treatment",
+                "NUPLAZID Parkinsons",
+                "Clinical data",
+                "Clinical results",
+                "Clinical trial results",
+                "clinical information",
+                "Clinical trial result",
+                "Clinical result",
+                "start NUPLAZID",
+                "NUPLAZID start",
+                "NUPLAZID Side effects",
+                "NUPLAZID Side effect"
             ],
             "responses": [
                 "About NUPLAZID"
@@ -125,46 +179,15 @@
                 "frequently asked question nuplazid",
                 "frequently asked questions nuplazid",
                 "getting NUPLAZID",
-                "get NUPLAZID"
+                "get NUPLAZID",
+                "Taking NUPLAZID",
+                "Take NUPLAZID",
+                "NUPLAZID effective",
+                "effective NUPLAZID",
+                "effective"
             ],
             "responses": [
                 "FAQ"
-            ]
-        },
-        {
-            "Intent": "NUPLAZID Clinical Trial",
-            "patterns": [
-                "NUPLAZID Parkinsons",
-                "Clinical data",
-                "Clinical results",
-                "Clinical trial results",
-                "clinical information",
-                "Clinical trial result",
-                "Clinical result"
-            ],
-            "responses": [
-                "NUPLAZID Clinical Trial Results"
-            ]
-        },
-        {
-            "Intent": "About Parkinson's Disease",
-            "patterns": [
-                "cause of Parkinson disease",
-                "cause of Parkinson's disease",
-                "cause of Parkinson's diseases",
-                "cause of PD",
-                "cause of Parkinsons disease",
-                "cause of Parkinson diseases",
-                "cause of Parkinsons diseases",
-                "Parkinson condition",
-                "Parkinson's condition",
-                "management of Parkinson",
-                "management of Parkinson's",
-                "Learn about Parkinson disease",
-                "Learn about Parkinson's disease"
-            ],
-            "responses": [
-                "cause of Parkinson's disease"
             ]
         },
         {
@@ -174,10 +197,25 @@
                 "Doctors discussion guide",
                 "DDG",
                 "discussion guide",
-                "healthcare Discussion"
+                "healthcare Discussion",
+                "healthcare provider",
+                "consult healthcare provider",
+                "information",
+                "questions",
+                "question",
+                "healthcare",
+                "speak with",
+                "ddg",
+                "questions doctor",
+                "symptoms get worse over time",
+                "symptoms worse over time",
+                "information pd related hallucination",
+                "information pd related hallucinations",
+                "information pd related delusion",
+                "information pd related delusions"
             ],
             "responses": [
-                "Doctor discussion guide"
+                "Talking with your healthcare provider"
             ]
         },
         {
@@ -198,134 +236,38 @@
             ]
         },
         {
-            "Intent": "Talking to your healthcare provider",
-            "patterns": [
-                "healthcare provider",
-                "consult healthcare provider",
-                "information",
-                "questions",
-                "question",
-                "healthcare",
-                "speak with",
-                "ddg",
-                "questions doctor",
-                "symptoms get worse over time",
-                "symptoms worse over time",
-                "information pd related hallucination",
-                "information pd related hallucinations",
-                "information pd related delusion",
-                "information pd related delusions"
-            ],
-            "responses": [
-                "Necessity to Consult healthcare provider"
-            ]
-        },
-        {
-            "Intent": "About Parkinson's Disease",
-            "patterns": [
-                "cause of Parkinson disease",
-                "cause of Parkinson's disease"
-            ],
-            "responses": [
-                "cause of Parkinson's disease"
-            ]
-        },
-        {
-            "Intent": "About Parkinson's Disease",
-            "patterns": [
-                "Parkinson condition",
-                "management of Parkinson",
-                "Learn about Parkinson disease",
-                "Parkinson's condition",
-                "management of Parkinson's",
-                "Learn about Parkinson's disease"
-            ],
-            "responses": [
-                "Parkinson's condition"
-            ]
-        },
-        {
-            "Intent": "Related hallucinations and delusions queries",
-            "patterns": [
-                "hallucinations Parkinson",
-                "hallucinations associated Parkinson's Disease",
-                "Parkinson induced hallucinations",
-                "Parkinson hallucination",
-                "hallucinations Parkinson's",
-                "Parkinson's induced hallucinations",
-                "Parkinson's hallucination",
-                "signs of hallucinations",
-                "sign of hallucination",
-                "hallucination",
-                "hallucinations",
-                "visual hallucinations",
-                "PD related Hallucinations",
-                "PD-related Hallucinations",
-                "PD-related Hallucination",
-                "PD related Hallucination"
-            ],
-            "responses": [
-                "Parkinson's hallucination"
-            ]
-        },
-        {
-            "Intent": "Related hallucinations and delusions queries",
-            "patterns": [
-                "Parkinson delusions",
-                "Parkinson induced delusions",
-                "Parkinson delusion",
-                "Parkinson's delusions",
-                "Parkinson's induced delusions",
-                "Parkinson's delusion",
-                "related hallucination & delusion",
-                "related hallucinations & delusions",
-                "delusion",
-                "delusions",
-                "NUPLAZID PD-related Delusions",
-                "NUPLAZID PD related Delusions",
-                "NUPLAZID PD-related Delusion",
-                "NUPLAZID PD related Delusion"
-            ],
-            "responses": [
-                "Parkinson's delusions"
-            ]
-        },
-        {
-            "Intent": "Related hallucinations and delusions queries",
-            "patterns": [
-                "delusions associated PD psychosis",
-                "delusions psychosis",
-                "delusions associated psychosis",
-                "delusions associated PD",
-                "delusions associated Parkinson",
-                "delusions associated Parkinson's",
-                "delusions associated Parkinsons"
-            ],
-            "responses": [
-                "delusions associated with PD psychosis"
-            ]
-        },
-        {
-            "Intent": "how to start NUPLAZID",
-            "patterns": [
-                "start NUPLAZID",
-                "NUPLAZID start"
-            ],
-            "responses": [
-                "how to start NUPLAZID"
-            ]
-        },
-        {
             "Intent": "Allergic reaction",
             "patterns": [
                 "Allergic reaction",
                 "Allergic reactions",
                 "Allergy reaction",
                 "Allergy reactions",
-                "Allergy"
+                "Allergy",
+                "medical concern",
+                "urgent help",
+                "immediate help",
+                "urgent",
+                "issues",
+                "concerns",
+                "product issue",
+                "product issues",
+                "Reporting",
+                "Issues",
+                "Issue",
+                "Problem",
+                "Concerns",
+                "Concern",
+                "disturb",
+                "disturbed",
+                "Product issue",
+                "Product issues",
+                "Product concern",
+                "Product concerns",
+                "Medical Information",
+                "Product Quality complaints"
             ],
             "responses": [
-                "Allergic reaction"
+                "Medical Information/Product quality complaints"
             ]
         },
         {
@@ -355,15 +297,7 @@
                 "care coordinator",
                 "assistant",
                 "assistance",
-                "assist me"
-            ],
-            "responses": [
-                "Contact Acadia CA"
-            ]
-        },
-        {
-            "Intent": "Contact Details",
-            "patterns": [
+                "assist me",
                 "about Acadia Pharmaceuticals",
                 "about Acadia Pharmaceutical",
                 "Pharmaceutical",
@@ -372,7 +306,7 @@
                 "acadia"
             ],
             "responses": [
-                "Acadia connect"
+                "Contact us"
             ]
         },
         {
@@ -395,67 +329,14 @@
                 "full Prescribing Information",
                 "drug interactions",
                 "Recommended dose",
-                "Recommend dose"
-            ],
-            "responses": [
-                "NUPLAZID prescribing information"
-            ]
-        },
-        {
-            "Intent": "Prescribe Information",
-            "patterns": [
+                "Recommend dose",
                 "NUPLAZID dosage options",
                 "NUPLAZID dosage option",
                 "dosage",
                 "dosage information"
             ],
             "responses": [
-                "NUPLAZID dosage options"
-            ]
-        },
-        {
-            "Intent": "Taking NUPLAZID",
-            "patterns": [
-                "Taking NUPLAZID",
-                "Take NUPLAZID",
-                "NUPLAZID effective",
-                "effective NUPLAZID",
-                "effective"
-            ],
-            "responses": [
-                "Taking NUPLAZID"
-            ]
-        },
-        {
-            "Intent": "Side Effects",
-            "patterns": [
-                "NUPLAZID Side effects",
-                "NUPLAZID Side effect"
-            ],
-            "responses": [
-                "Side Effects"
-            ]
-        },
-        {
-            "Intent": "Medical Questions",
-            "patterns": [
-                "Reporting",
-                "Issues",
-                "Issue",
-                "Problem",
-                "Concerns",
-                "Concern",
-                "disturb",
-                "disturbed",
-                "Product issue",
-                "Product issues",
-                "Product concern",
-                "Product concerns",
-                "Medical Information",
-                "Product Quality complaints"
-            ],
-            "responses": [
-                "Medical Questions"
+                "Prescribing Information"
             ]
         },
         {
@@ -496,7 +377,7 @@
             ]
         },
         {
-            "Intent": "Important Safety Information",
+            "Intent": "Adverse Events Reporting",
             "patterns": [
                 "Medwatch",
                 "ISI",
@@ -561,7 +442,7 @@
                 "Changes normal walking"
             ],
             "responses": [
-                "Important Safety Information"
+                "Adverse Events Reporting"
             ]
         },
         {
@@ -577,31 +458,7 @@
                 "much NUPLAZID Cost",
                 "much NUPLAZID",
                 "cost nuplazid",
-                "Acadia Connect"
-            ],
-            "responses": [
-                "NUPLAZID cost"
-            ]
-        },
-        {
-            "Intent": "Adverse Reaction",
-            "patterns": [
-                "medical concern",
-                "urgent help",
-                "immediate help",
-                "urgent",
-                "issues",
-                "concerns",
-                "product issue",
-                "product issues"
-            ],
-            "responses": [
-                "Adverse Reaction"
-            ]
-        },
-        {
-            "Intent": "Acadia Connect details like Cost and Insurance, Coverage Lookup links",
-            "patterns": [
+                "Acadia Connect",
                 "NUPLAZID coverage",
                 "NUPLAZID medication payment assistance",
                 "Insurance type",
@@ -620,15 +477,7 @@
                 "prescription support nuplazid",
                 "someone assist insurance",
                 "patient assistance program",
-                "patient assistance"
-            ],
-            "responses": [
-                "NUPLAZID coverage"
-            ]
-        },
-        {
-            "Intent": "Acadia Connect details like Cost and Insurance, Coverage Lookup links",
-            "patterns": [
+                "patient assistance",
                 "sign up",
                 "Signup",
                 "help signup",
@@ -641,15 +490,7 @@
                 "parkinson's patient support",
                 "more nuplazid",
                 "parkinson's support community",
-                "pdp support community"
-            ],
-            "responses": [
-                "Sign up"
-            ]
-        },
-        {
-            "Intent": "Acadia Connect details like Cost and Insurance, Coverage Lookup links",
-            "patterns": [
+                "pdp support community",
                 "copay program",
                 "copay",
                 "Support",
@@ -665,7 +506,7 @@
                 "Organizations supporting Parkinson's Patients"
             ],
             "responses": [
-                "Support"
+                "Support / Resources"
             ]
         },
         {
@@ -679,15 +520,7 @@
                 "materials print out",
                 "materials print",
                 "tv commercial",
-                "support"
-            ],
-            "responses": [
-                "Resources"
-            ]
-        },
-        {
-            "Intent": "Enrollment Form",
-            "patterns": [
+                "support",
                 "Patient Enrollment Form",
                 "NUPLAZID Enrollment Form",
                 "Enrollment form",
@@ -697,7 +530,7 @@
                 "caregiver enroll patient"
             ],
             "responses": [
-                "Patient Enrollment Form"
+                "Resources"
             ]
         }
     ]
