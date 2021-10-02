@@ -2,7 +2,7 @@
     "data": [{
             "Intent": "About PD Psychosis",
             "patterns": [
-                "About PD disease",
+                "About PD disease", 
                 "Parkinsons Disease",
                 "Parkinson Diseases",
                 "Parkinson's Disease",
@@ -519,3 +519,4 @@
         }
     ]
 }
+
