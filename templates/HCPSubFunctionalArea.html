@@ -6,6 +6,9 @@
         background-color: #5ade6a73;
     }
 </style>
+<script>
+    var botUrl = $("#boturl").val();
+</script>
 
 <!--  -->
 <div class="container content-container">
@@ -52,7 +55,7 @@
                         $.ajax({
                             type: 'POST',
                             enctype: 'multipart/form-data',
-                            url: '/Add_Keyword_HCPSubFunctionalArea',
+                            url: botUrl + '/Add_Keyword_HCPSubFunctionalArea',
                             processData: false,
                             cache: false,
                             timeout: 800000,
@@ -109,7 +112,7 @@
                     $.ajax({
                         type: 'POST',
                         enctype: 'multipart/form-data',
-                        url: '/del_keywords_HCPSubFunctionalArea',
+                        url: botUrl + '/del_keywords_HCPSubFunctionalArea',
                         processData: false,
                         cache: false,
                         timeout: 800000,
@@ -182,7 +185,7 @@
         $.ajax({
             type: 'POST',
             enctype: 'multipart/form-data',
-            url: '/get_dropdown_intent_HCP',
+            url: botUrl + '/get_dropdown_intent_HCP',
             contentType: 'application/json',
             processData: false,
             cache: false,
@@ -263,7 +266,7 @@
             $.ajax({
                 type: 'POST',
                 enctype: 'multipart/form-data',
-                url: './show_dropdownIntent_Keywords_HCPSubFunctionalArea',
+                url: botUrl + '/show_dropdownIntent_Keywords_HCPSubFunctionalArea',
                 processData: false,
                 contentType: false,
                 cache: false,

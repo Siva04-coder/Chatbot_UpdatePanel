@@ -119,6 +119,8 @@ def delete_Keywords_ConAutoSuggestion():
     word2 = db_proxy.delete_Keywords_ConAutoSuggestion()
     #print(json.dumps(int1))
     return json.dumps(word2)
+
+    
 ##########################################  HCP ###############################################
 
 
@@ -187,3 +189,4 @@ def delete_Keywords_HCPAutoSuggestion():
     return json.dumps(word)
 
 
+application.run(port=4858)

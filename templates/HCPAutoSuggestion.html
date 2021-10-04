@@ -6,6 +6,9 @@
         background-color: #5ade6a73;
     }
 </style>
+<script>
+    var botUrl = $("#boturl").val();
+</script>
 
 <!--  -->
 <div class="container content-container">
@@ -32,7 +35,7 @@
                         $.ajax({
                             type: 'POST',
                             enctype: 'multipart/form-data',
-                            url: '/get_new_Keywords_HCPAutoSuggestion',
+                            url: botUrl + '/get_new_Keywords_HCPAutoSuggestion',
                             processData: false,
                             cache: false,
                             timeout: 800000,
@@ -43,7 +46,7 @@
                                     $.ajax({
                                         type: 'POST',
                                         enctype: 'multipart/form-data',
-                                        url: '/Show_Keywords_HCPAutoSuggestion',
+                                        url: botUrl + '/Show_Keywords_HCPAutoSuggestion',
                                         processData: false,
                                         contentType: false,
                                         cache: false,
@@ -110,7 +113,7 @@
                             $.ajax({
                                 type: 'POST',
                                 enctype: 'multipart/form-data',
-                                url: '/delete_Keywords_HCPAutoSuggestion',
+                                url: botUrl + '/delete_Keywords_HCPAutoSuggestion',
                                 processData: false,
                                 cache: false,
                                 timeout: 800000,
@@ -121,7 +124,7 @@
                                         $.ajax({
                                             type: 'POST',
                                             enctype: 'multipart/form-data',
-                                            url: '/Show_Keywords_HCPAutoSuggestion',
+                                            url: botUrl + '/Show_Keywords_HCPAutoSuggestion',
                                             processData: false,
                                             contentType: false,
                                             cache: false,
@@ -243,7 +246,7 @@
         $.ajax({
             type: 'POST',
             enctype: 'multipart/form-data',
-            url: '/Show_Keywords_HCPAutoSuggestion',
+            url: botUrl + '/Show_Keywords_HCPAutoSuggestion',
             processData: false,
             contentType: false,
             cache: false,
